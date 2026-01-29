@@ -1,0 +1,164 @@
+html{
+    scroll-behavior: smooth;
+}
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #f1f5f9;
+  --primary: #2563eb;
+}
+
+body.dark {
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: #111827;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.hero {
+  padding: 100px 0;
+}
+.hero-buttons{
+    padding-top: 50px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.muted {
+  background: var(--muted);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.stats,
+.card-grid,
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card,
+.project,
+.stat {
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid #e5e7eb;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.contact-form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input, textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+}
+
+.footer {
+  padding: 30px;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
