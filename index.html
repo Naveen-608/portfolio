@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naveen Kushwaha | AI & ML Engineer</title>
+
+  <meta name="description" content="Naveen Kushwaha – B.Tech CSE (AI & ML) student, passionate about AI, ML, and modern software development." />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <div class="logo">Naveen.</div>
+    <div class="logo">Naveen<span>.</span></div>
 
-    <nav>
+    <nav class="nav-links">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -21,24 +24,25 @@
     </nav>
 
     <div class="nav-actions">
-      <button id="themeToggle">🌙</button>
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
       <a href="#contact" class="btn small">Contact</a>
     </div>
   </div>
 </header>
 
+<main>
+
 <!-- HERO -->
 <section id="home" class="hero">
   <div class="container hero-grid">
-    <div class="hero-text">
+    <div class="hero-text fade-in">
       <p class="intro">Hello, I’m</p>
       <h1>Naveen Kushwaha</h1>
       <h2>B.Tech CSE (AI & ML)</h2>
 
       <p class="description">
-        Computer Science undergraduate specializing in Artificial Intelligence
-        and Machine Learning. Passionate about building intelligent systems,
-        solving real-world problems, and continuous learning.
+        Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning.
+        Passionate about building intelligent systems and solving real-world problems.
       </p>
 
       <div class="hero-buttons">
@@ -47,8 +51,8 @@
       </div>
     </div>
 
-    <div class="hero-image">
-      <img src="assets/profile.jpg" alt="Naveen Kushwaha">
+    <div class="hero-image fade-in">
+      <img src="assets/profile.jpg" alt="Portrait of Naveen Kushwaha" />
     </div>
   </div>
 </section>
@@ -59,22 +63,22 @@
     <h3 class="section-title">About Me</h3>
 
     <p class="section-text">
-      I am a Computer Science Engineering student at <strong>Dr. AITD, Kanpur</strong>
-      with a specialization in <strong>AI & ML</strong>. I focus on strong fundamentals,
-      hands-on projects, and practical problem-solving using modern technologies.
+      I am a Computer Science Engineering student at
+      <strong>Dr. Ambedkar Institute of Technology, Kanpur</strong>,
+      specializing in <strong>Artificial Intelligence & Machine Learning</strong>.
     </p>
 
     <div class="stats">
       <div class="stat">
         <h4>Skills</h4>
-        <p>Python, ML, DSA, HTML, CSS, JavaScript</p>
+        <p>Python, Machine Learning, DSA, HTML, CSS, JavaScript</p>
       </div>
       <div class="stat">
         <h4>Education</h4>
         <p>B.Tech CSE (AI & ML)</p>
       </div>
       <div class="stat">
-        <h4>Focus</h4>
+        <h4>Career Focus</h4>
         <p>AI Projects & Software Development</p>
       </div>
     </div>
@@ -87,22 +91,10 @@
     <h3 class="section-title">What I Do</h3>
 
     <div class="card-grid">
-      <div class="card">
-        <h4>Machine Learning</h4>
-        <p>Data preprocessing, model training, evaluation, and experimentation.</p>
-      </div>
-      <div class="card">
-        <h4>Python Development</h4>
-        <p>Automation, scripting, logic building, and academic projects.</p>
-      </div>
-      <div class="card">
-        <h4>Web Development</h4>
-        <p>Clean, responsive websites using modern HTML, CSS, and JavaScript.</p>
-      </div>
-      <div class="card">
-        <h4>Data Analysis</h4>
-        <p>Basic analysis, visualization, and insights using Python libraries.</p>
-      </div>
+      <div class="card">Machine Learning Models & Experiments</div>
+      <div class="card">Python Automation & Scripting</div>
+      <div class="card">Responsive Web Development</div>
+      <div class="card">Data Analysis & Visualization</div>
     </div>
   </div>
 </section>
@@ -113,9 +105,9 @@
     <h3 class="section-title">Selected Work</h3>
 
     <div class="project-grid">
-      <div class="project">AI Mini Project</div>
+      <div class="project">AI Mini Projects</div>
       <div class="project">Python Automation Scripts</div>
-      <div class="project">Portfolio Website</div>
+      <div class="project">Personal Portfolio Website</div>
       <div class="project">Certifications & Learning</div>
     </div>
   </div>
@@ -127,17 +119,19 @@
     <h3 class="section-title">Contact Me</h3>
 
     <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button class="btn">Send Message</button>
+      <input type="text" placeholder="Your Name" aria-label="Name" required />
+      <input type="email" placeholder="Your Email" aria-label="Email" required />
+      <textarea placeholder="Your Message" aria-label="Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
     </form>
   </div>
 </section>
 
+</main>
+
 <footer class="footer">
   <p>© 2026 Naveen Kushwaha</p>
-  <p>naveen17593@gmail.com</p>
+  <p>Email: naveen17593@gmail.com</p>
 </footer>
 
 <script src="script.js"></script>
