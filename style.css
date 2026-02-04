@@ -75,26 +75,7 @@ body {
   color: #38bdf8;
 }
 
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
 /* HERO */
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 320px;      /* ✅ controls size */
-  height: auto;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
 .hero {
   min-height: 90vh;
   display: flex;
@@ -110,8 +91,53 @@ body {
 .hero-buttons {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
   margin-top: 1.5rem;
+}
+
+/* HERO IMAGE FIXED */
+.hero-image {
+  max-width: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  object-fit: cover;
+
+  background: #020617;
+  padding: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* SOCIAL LINKS */
+.social-links {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 18px;
+}
+
+.social-links a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #38bdf8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-4px);
 }
 
 /* CARDS */
@@ -145,10 +171,3 @@ body {
   padding: 0.75rem;
   border-radius: 6px;
 }
-
-/* TOAST POPUP */
-.toast {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #020617;
