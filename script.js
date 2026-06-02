@@ -1,95 +1,86 @@
-/* ==================================
-   FINITE REALISTIC CURSOR SNAKE
-================================== */
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => io.observe(el));
 
-const canvas = document.getElementById("snakeCanvas");
-const ctx = canvas.getContext("2d");
+// Skill bars
+const bars = document.querySelectorAll('.skill-bar');
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.width = e.target.getAttribute('data-width') + '%';
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+bars.forEach(b => barObs.observe(b));
 
-/* ---------- CANVAS ---------- */
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-/* ---------- CURSOR ---------- */
-const mouse = {
-  x: canvas.width / 2,
-  y: canvas.height / 2,
-};
-
-window.addEventListener("mousemove", (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+// Nav shrink on scroll
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.padding = window.scrollY > 60 ? '0.9rem 4rem' : '';
 });
 
-/* ---------- CONFIG ---------- */
-const SEGMENTS = 35;          // ✅ finite length
-const SEGMENT_LENGTH = 10;    // ✅ fixed spacing
-const HEAD_LERP = 0.25;       // responsiveness
-const MAX_WIDTH = 6;
+// Contact form — sends email via EmailJS
+// SETUP STEPS:
+// 1. Go to https://www.emailjs.com and create a free account
+// 2. Add an Email Service (Gmail recommended) → copy your SERVICE ID
+// 3. Create an Email Template → copy your TEMPLATE ID
+//    In the template use these variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+// 4. Go to Account → copy your PUBLIC KEY
+// 5. Replace the three placeholder values below
 
-/* ---------- SNAKE DATA ---------- */
-const snake = [];
-for (let i = 0; i < SEGMENTS; i++) {
-  snake.push({
-    x: mouse.x,
-    y: mouse.y,
-  });
-}
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← paste here
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // ← paste here
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // ← paste here
 
-let time = 0;
+// Load EmailJS SDK
+(function () {
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  script.onload = () => emailjs.init(EMAILJS_PUBLIC_KEY);
+  document.head.appendChild(script);
+})();
 
-/* ---------- MAIN LOOP ---------- */
-function animateSnake() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  time += 0.04;
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-  /* ---- HEAD (tight follow) ---- */
-  snake[0].x += (mouse.x - snake[0].x) * HEAD_LERP;
-  snake[0].y += (mouse.y - snake[0].y) * HEAD_LERP;
+  const btn     = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const status  = document.getElementById('formStatus');
 
-  /* ---- BODY (hard distance constraint) ---- */
-  for (let i = 1; i < snake.length; i++) {
-    const prev = snake[i - 1];
-    const cur = snake[i];
+  btnText.textContent = 'Sending…';
+  btn.disabled = true;
+  status.textContent = '';
+  status.className = 'form-status';
 
-    let dx = cur.x - prev.x;
-    let dy = cur.y - prev.y;
-    let dist = Math.hypot(dx, dy) || 0.0001;
+  const params = {
+    from_name:  document.getElementById('name').value,
+    from_email: document.getElementById('email').value,
+    subject:    document.getElementById('subject').value,
+    message:    document.getElementById('message').value,
+  };
 
-    const angle = Math.atan2(dy, dx);
-
-    // lock distance
-    cur.x = prev.x + Math.cos(angle) * SEGMENT_LENGTH;
-    cur.y = prev.y + Math.sin(angle) * SEGMENT_LENGTH;
-
-    /* subtle slither */
-    const wave = Math.sin(time - i * 0.4) * 0.6;
-    cur.x += Math.cos(angle + Math.PI / 2) * wave;
-    cur.y += Math.sin(angle + Math.PI / 2) * wave;
-  }
-
-  /* ---- DRAW ---- */
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-
-  for (let i = 0; i < snake.length - 1; i++) {
-    const p1 = snake[i];
-    const p2 = snake[i + 1];
-
-    const t = i / snake.length;
-    ctx.lineWidth = MAX_WIDTH * (1 - t) + 1;
-    ctx.strokeStyle = `rgba(56, 189, 248, ${0.5 - t * 0.3})`;
-
-    ctx.beginPath();
-    ctx.moveTo(p1.x, p1.y);
-    ctx.lineTo(p2.x, p2.y);
-    ctx.stroke();
-  }
-
-  requestAnimationFrame(animateSnake);
-}
-
-requestAnimationFrame(animateSnake);
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+    .then(() => {
+      status.textContent = '✓ Message sent! I will get back to you soon.';
+      status.classList.add('success');
+      this.reset();
+    })
+    .catch((err) => {
+      console.error(err);
+      status.textContent = '✗ Something went wrong. Please try again.';
+      status.classList.add('error');
+    })
+    .finally(() => {
+      btnText.textContent = 'Send Message →';
+      btn.disabled = false;
+    });
+});

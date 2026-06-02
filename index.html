@@ -2,141 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Naveen Kushwaha | AI & ML Engineer</title>
-  <meta name="description"
-    content="Naveen Kushwaha – B.Tech CSE (AI & ML) student, passionate about AI, ML, and software development." />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naveen Kushwaha — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Font Awesome for social icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/bigtimes" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Cursor Snake Canvas -->
-  <canvas id="snakeCanvas" aria-hidden="true"></canvas>
 
-  <header class="header">
-    <div class="container nav">
-      <div class="logo">Naveen<span>.</span></div>
+<nav>
+  <a href="#" class="nav-logo">NK</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Work</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a href="#contact" class="btn small">Contact</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">// Portfolio 2026</p>
+    <h1 class="hero-name">Naveen<br><em>Kushwaha</em></h1>
+    <p class="hero-subtitle">B.Tech CSE · Dr. Ambedkar IT, Kanpur</p>
+    <p class="hero-bio">A Computer Science student driven by curiosity — building at the intersection of software development, digital creativity, and problem-solving.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn">Get In Touch</a>
+      <a href="#skills" class="btn btn-ghost">View Skills</a>
     </div>
-  </header>
+  </div>
+  <div class="hero-right">
+    <img src="photo.png" alt="Naveen Kushwaha" class="hero-photo">
+  </div>
+  <div class="hero-line"></div>
+</section>
 
-  <main>
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="intro">Hello, I’m</p>
-          <h1>Naveen Kushwaha</h1>
-          <h2>B.Tech CSE (AI & ML)</h2>
+<!-- ABOUT -->
+<section id="about">
+  <div><div class="about-num">01</div></div>
+  <div class="reveal">
+    <div class="section-divider"><span>About Me</span></div>
+    <h2 class="section-heading">Crafting <em>solutions</em><br>with code &amp; creativity</h2>
+    <p class="about-text">I am a B.Tech Computer Science student with a strong interest in technology, software development, and digital creativity. I enjoy building projects that solve real-world problems.</p>
+    <p class="about-text">Beyond coding, I bring a full toolkit — proficient in Microsoft Office and Canva for crafting compelling visual designs. I'm detail-oriented, a quick learner, and always eager to grow.</p>
+    <div class="about-meta">
+      <div class="meta-row"><span class="meta-label">Degree</span><span class="meta-val">B.Tech — Computer Science &amp; Engineering</span></div>
+      <div class="meta-row"><span class="meta-label">Institute</span><span class="meta-val">Dr. Ambedkar Institute of Technology, Kanpur</span></div>
+      <div class="meta-row"><span class="meta-label">Focus</span><span class="meta-val">Software Development · Digital Design</span></div>
+      <div class="meta-row"><span class="meta-label">Based In</span><span class="meta-val">Uttar Pradesh, India</span></div>
+    </div>
+  </div>
+</section>
 
-          <p class="description">
-            Computer Science undergraduate specializing in Artificial Intelligence
-            and Machine Learning. Passionate about building intelligent systems.
-          </p>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-divider reveal"><span>02 · Skills &amp; Tools</span></div>
+  <h2 class="section-heading reveal">What I <em>bring</em><br>to the table</h2>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">⌨️</div>
+      <div class="skill-name">C &amp; C++</div>
+      <div class="skill-desc">Core programming, data structures, and algorithmic problem-solving.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="80"></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📄</div>
+      <div class="skill-name">Microsoft Office</div>
+      <div class="skill-desc">Word, Excel, and PowerPoint for documentation, data, and presentations.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🎨</div>
+      <div class="skill-name">Canva Design</div>
+      <div class="skill-desc">Posters, social media graphics, and brand visuals with a creative eye.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="85"></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🔍</div>
+      <div class="skill-name">Problem Solving</div>
+      <div class="skill-desc">Detail-oriented approach to breaking complex challenges into solutions.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="82"></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🤝</div>
+      <div class="skill-name">Collaboration</div>
+      <div class="skill-desc">Quick learner who thrives on teamwork and cross-functional projects.</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="87"></div></div>
+    </div>
+  </div>
+</section>
 
-          <div class="hero-buttons">
-            <a href="#contact" class="btn">Get in Touch</a>
-            <a href="./assets/resume.pdf" class="btn outline" download>
-              Download Resume
-            </a>
-          </div>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-divider reveal"><span>03 · Projects</span></div>
+  <h2 class="section-heading reveal">Things I've <em>built</em></h2>
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-num">// 001</div>
+      <div class="project-title">Real-World Problem Solver</div>
+      <div class="project-desc">A C/C++ project focused on applying programming logic to address practical everyday challenges with clean, efficient code.</div>
+      <div class="project-tags"><span class="tag">C++</span><span class="tag">Algorithms</span></div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-num">// 002</div>
+      <div class="project-title">Visual Design Portfolio</div>
+      <div class="project-desc">Poster designs, social media graphics, and presentation decks created using Canva, blending aesthetics with communication.</div>
+      <div class="project-tags"><span class="tag">Canva</span><span class="tag">Design</span></div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-num">// 003</div>
+      <div class="project-title">Academic Presentations</div>
+      <div class="project-desc">Professional PowerPoint presentations for academic and event contexts with structured storytelling.</div>
+      <div class="project-tags"><span class="tag">PowerPoint</span><span class="tag">Academic</span></div>
+    </div>
+  </div>
+</section>
 
-          <!-- Social Links -->
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/kushwahanaveen" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.facebook.com/YOUR_USERNAME" target="_blank" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/knaveen06" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-divider reveal" style="justify-content:center;"><span>04 · Contact</span></div>
+    <h2 class="contact-heading reveal">Let's <em>connect</em><br>&amp; collaborate</h2>
+    <p class="contact-sub reveal">Open to collaborations, internships, and conversations about technology, software, and creative projects.</p>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required />
         </div>
-
-        <div class="hero-image">
-          <img
-            src="assets/profile.jpg"
-            alt="Portrait of Naveen Kushwaha"
-            loading="lazy"
-          />
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required />
         </div>
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <h3 class="section-title">About Me</h3>
-        <p class="section-text">
-          I am a CSE student at <strong>Dr. Ambedkar Institute of Technology, Kanpur</strong>,
-          specializing in <strong>AI & ML</strong>.
-        </p>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Collaboration / Internship / Hello" required />
       </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section muted">
-      <div class="container">
-        <h3 class="section-title">What I Do</h3>
-        <div class="card-grid">
-          <div class="card">Machine Learning Projects</div>
-          <div class="card">Python Automation</div>
-          <div class="card">Web Development</div>
-          <div class="card">Data Analysis</div>
-        </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
       </div>
-    </section>
+      <button type="submit" class="btn submit-btn" id="submitBtn">
+        <span id="btnText">Send Message →</span>
+      </button>
+      <p id="formStatus" class="form-status"></p>
+    </form>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h3 class="section-title">Selected Work</h3>
-        <div class="project-grid">
-          <div class="project">AI Mini Projects</div>
-          <div class="project">Python Scripts</div>
-          <div class="project">Portfolio Website</div>
-        </div>
-      </div>
-    </section>
+    <div class="social-links reveal">
+      <a href="https://www.linkedin.com/in/kushwahanaveen/" target="_blank" rel="noopener" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://www.instagram.com/knaveen06/" target="_blank" rel="noopener" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+</section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section muted">
-      <div class="container contact">
-        <h3 class="section-title">Contact Me</h3>
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button class="btn">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </main>
+<footer>
+  <span class="footer-copy">© 2026 Naveen Kushwaha. All rights reserved.</span>
+  <span class="footer-right">B.Tech CSE · Dr. Ambedkar IT, Kanpur</span>
+</footer>
 
-  <footer class="footer">
-    <p>© 2026 Naveen Kushwaha</p>
-    <p>Email: naveen17593@gmail.com</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
